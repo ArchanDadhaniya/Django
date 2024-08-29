@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
+
+def item(request):
+    return HttpResponse("Hello, world. This is an item view.")
