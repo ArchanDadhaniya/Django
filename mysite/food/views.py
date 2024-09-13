@@ -1,7 +1,7 @@
 
 from django.http import HttpResponse
 
-from food.models import Item
+from .models import Item
 from django.template import loader
 
 
