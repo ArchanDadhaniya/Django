@@ -1,9 +1,9 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
-
-from .models import Item
+from django.shortcuts import render, redirect
 from django.template import loader
+from .forms import ItemForm
+from .models import Item
 
 
 # Create your views here.
@@ -25,3 +25,13 @@ def detail(request, item_id):
 
 def item(request):
     return HttpResponse("Hello, world. This is an item view.")
+
+
+def create_item(request):
+    form = ItemForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('food:index')
+
+    return render(request, 'food/item_form.html', {'form': form})

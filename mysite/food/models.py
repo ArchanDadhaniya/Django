@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Item (models.Model):
+class Item(models.Model):
 
     def __str__(self):
         return self.item_name
@@ -9,3 +9,4 @@ class Item (models.Model):
     item_name = models.CharField(max_length=200)
     item_description = models.CharField(max_length=200)
     item_price = models.IntegerField()
+    item_image = models.CharField(max_length=500,default='https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-260nw-1037719192.jpg')
